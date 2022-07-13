@@ -1,0 +1,95 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/Green.png);
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+}
+
+.content-wrap {
+    margin: 10px;
+    height: 70vh;
+}
+
+.container {
+    background-color: rgb(201, 172, 135);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    max-width: 480px;
+    margin: auto;
+}
+
+.header {
+    background-color: #f7f7f7;
+    color: #261504;
+    border-bottom: 1px solid #261504;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+table {
+    padding: 30px;
+    margin: auto;
+}
+
+table input {
+    padding: 5px;
+    margin: 2px;
+    border-radius: 5px;
+    border: 1px solid #261504;
+}
+
+.success {
+    background-color: rgb(0, 254, 136);
+    text-align: center;
+    color: #fff;
+}
+
+.error {
+    background-color: rgb(255, 140, 101);
+    text-align: center;
+    color: #fff;
+}
+
+#board-name {
+    padding: 5px;
+    margin: 2px;
+    border-radius: 5px;
+    border: 1px solid #261504;
+}
+
+.container form i {
+    display: none;
+    color: red;
+    font-size: 14px;
+}
+
+small {
+    color: red;
+}
+
+table input:not(.checkbox) {
+    width: 100%;
+}
+
+.btn {
+    border: 1px solid #261504;
+    padding: 10px 40px;
+    color: #261504;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #261504;
+}

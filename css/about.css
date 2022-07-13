@@ -1,0 +1,116 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/book.png);
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+}
+
+.about {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-1 {
+    margin: 30px;
+    padding: 5px;
+}
+
+.about-1 h1 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.about-1 p {
+    font-size: 18px;
+    text-align: center;
+    padding: 3px;
+    color: #fff;
+}
+
+.about-2 {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content {
+    padding: 40px 30px;
+    margin: 10px 5px;
+    text-align: center;
+}
+
+.content i {
+    font-size: 30px;
+    margin: 0;
+    display: block;
+}
+
+.content h3 {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.content hr {
+    width: 50%;
+    height: 1px;
+    background: rgb(238, 191, 104);
+    margin: auto;
+    border: none;
+}
+
+.content p {
+    margin-top: 10px;
+}
+
+.content:nth-child(1) {
+    flex: 20%;
+    color: #fff;
+    background: #261504;
+    box-shadow: 0 0 8px rgba(250, 250, 250, 0.6);
+    border-radius: 5px;
+    padding: 40px 30px;
+}
+
+.content:nth-child(1):hover {
+    background-color: #5c340d;
+    cursor: pointer;
+}
+
+.content:nth-child(2) {
+    flex: 20%;
+    border-radius: 5px;
+    color: #fff;
+    background: black;
+    box-shadow: 0 0 8px rgba(250, 250, 250, 0.6);
+    padding: 40px 30px;
+}
+
+.content:nth-child(2):hover {
+    background-color: #1d1d1d;
+    cursor: pointer;
+}
+
+.content:nth-child(3) {
+    flex: 20%;
+    color: #fff;
+    background: #261504;
+    box-shadow: 0 0 8px rgba(250, 250, 250, 0.6);
+    border-radius: 5px;
+    padding: 40px 30px;
+}
+
+.content:nth-child(3):hover {
+    background-color: #5c340d;
+    cursor: pointer;
+}
+
+.content:hover hr {
+    background-color: #fff;
+}
