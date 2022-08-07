@@ -14,4 +14,3 @@ $conn = mysqli_connect($server, $username, $password, $dbname);
 //     echo "<script>alert('Connected')</script>";
 
 // }
-?>

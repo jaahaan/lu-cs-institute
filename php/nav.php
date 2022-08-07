@@ -15,26 +15,27 @@
                     <li><a href="ml.php">ML</a></li>
                 </ul>
             </li>
-            <li><a href="about.php">About Us</a></li>
-            <li><a href="contactUs.php">Contact Us</a></li>
             <?php
             session_start();
             if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 echo '<li><a href="addCourses.php">Add Course</a></li>
-                    <li><a href="todo.php">Todo List</a></li>
+                      <li><a href="todo.php">Todo List</a></li>';
+            }
+            echo '<li><a href="about.php">About Us</a></li>
+            <li><a href="contactUs.php">Contact Us</a></li>';
 
-                            <li><a href="#" class="name">' . $_SESSION['fname'] . ' ' . $_SESSION['lname'] . ' <i class="fa fa-caret-down"></i></a>
-                                    <ul>
-                                    <li><a href="logout.php">Logout</a></li>
-                                    </ul>
-                            </li>
-                            
-                          ';
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                echo ' <li><a href="userProfile.php" class="name">' . $_SESSION['fname'] . ' ' . $_SESSION['lname'] . '      <i class="fa fa-caret-down"></i></a>
+                            <ul>
+                                <li><a href="logout.php">Logout</a></li>
+                            </ul>
+                        </li>';
             } else {
                 echo '<li><a href="registration.php">Registration</a></li>
-                          <li><a href="login.php">Login</a></li>';
+                      <li><a href="login.php">Login</a></li>';
             }
             ?>
+
         </ul>
     </div>
 </nav>

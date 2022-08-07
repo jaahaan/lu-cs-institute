@@ -16,13 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $imageDestination = "../img/" . $imageName;
         move_uploaded_file($imageLocation, $imageDestination);
 
-        $insert = "INSERT INTO courses VALUES('', '$title', '$price', '$imageDestination', current_timestamp())";
-
         if (strlen($title) < 1) {
             $titleErr = "Field Can't be empty!!";
         } else if (strlen($price) < 1) {
             $priceErr = "Field Can't be empty!!";
         } else {
+            $insert = "INSERT INTO courses VALUES('', '$title', '$price', '$imageDestination', current_timestamp())";
             if (mysqli_query($conn, $insert)) {
                 $success = "Course Added Successfully!!";
             } else {

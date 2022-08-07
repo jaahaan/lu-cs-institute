@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pp = '/((?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%&*?><+_-])).{8,20}/';
     $query = "SELECT * FROM users WHERE email = '$email'";
 
-    $result = mysqli_query($conn, $query);
+    $duplicate = mysqli_query($conn, $query);
 
     if (strlen($fname) < 3 || strlen($fname) > 20) {
         $fnameErr = "Length must be in between 3-20!!";
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $lnameErr = "Only Characters are allowed!!";
     } else if (!preg_match($ep, $email)) {
         $emailErr = "Please enter your institutional email!!";
-    } else if (mysqli_num_rows($result) > 0) {
+    } else if (mysqli_num_rows($duplicate) > 0) {
         $emailErr = 'Email already exist!!';
     } else if (!preg_match($mp, $mobile)) {
         $mobileErr = "Please enter a Valid mobile number!!";
@@ -66,12 +66,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <?php
-    require 'nav.php';
+    include 'nav.php';
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         echo 'echo <script>alert("Dont not try to access from URL!!")</script>;
                     echo <script>location.href="index.php"</script>;';
     } else {
-
         if ($success == true) {
             echo '<h1 class="success"> ' . $success . ' </h1>';
         }
@@ -104,7 +103,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <tr>
                             <td><label for="lname">Last Name</label></td>
-                            <td><input type="text" name="lname" id="lname" value="<?php if (isset($_REQUEST['lname'])) {echo $_POST['lname'];} ?>"></td>
+                            <td><input type="text" name="lname" id="lname" value="<?php if (isset($_REQUEST['lname'])) {
+                                                                                        echo $_POST['lname'];
+                                                                                    } ?>"></td>
                         </tr>
 
                         <tr>
@@ -117,7 +118,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <tr>
                             <td><label for="email">Email</label></td>
-                            <td><input type="email" name="email" id="email" value="<?php if (isset($_REQUEST['email'])) {echo $_POST['email']; } ?>"></td>
+                            <td><input type="email" name="email" id="email" value="<?php if (isset($_REQUEST['email'])) {
+                                                                                        echo $_POST['email'];
+                                                                                    } ?>"></td>
                         </tr>
                         <tr>
                             <td colspan="2" style="text-align: end;">
@@ -172,10 +175,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <?php include '_footer.php'; ?>
-        
+
         <script src="../js/menu.js"></script>
         <script src="../js/validation.js"></script>
-
     <?php
     }
     ?>

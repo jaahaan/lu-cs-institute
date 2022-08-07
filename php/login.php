@@ -7,10 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($conn, $query);
     $data  = mysqli_fetch_array($result);
 
-    if (mysqli_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) == 1) {
         session_start();
         $_SESSION['loggedin'] = true;
         $_SESSION['email'] = $email;
+        $_SESSION['id'] = $data['id'];
         $_SESSION['fname'] = $data['fname'];
         $_SESSION['lname'] = $data['lname'];
 
@@ -37,10 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <?php
-    require 'nav.php';
+    include 'nav.php';
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-        echo 'echo <script>alert("Dont not try to access from URL!!")</script>;
-                    echo <script>location.href="index.php"</script>;';
+        echo 'echo <script>
+        alert("Dont not try to access from URL!!");
+                    location.href="index.php";</script>';
     } else {
         echo '
                 <div class="content-wrap">
